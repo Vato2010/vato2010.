@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [2, 4, 6, 8];
+        const allEven = numbers.every(num => num % 2 === 0);
+
+        const strings = ["apple", "banana", "kiwi"];
+        const hasLongString = strings.some(str => str.length > 5);
+
+
+        const nums = [1, 2, 3, 4];
+        const doubledNumbers = [];
+        nums.forEach(num => {
+        doubledNumbers.push(num * 2);
+    });
+
+    const users = [
+  { name: "Alice", age: 22 },
+  { name: "Bob", age: 19 },
+  { name: "Charlie", age: 25 }
+];
+const allAdults = users.every(user => user.age >= 18);
+
+ const products = [
+  { name: "Book", price: 15 },
+  { name: "Pen", price: 5 },
+  { name: "Laptop", price: 500 }
+];
+const hasAffordableProduct = products.some(product => product.price < 20);
+
+
+
+const items = [
+  { name: "Apple", price: 2, quantity: 5 },
+  { name: "Banana", price: 1, quantity: 10 },
+  { name: "Orange", price: 3, quantity: 4 }
+];
+const totalValue = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+
+    </script>
+</body>
+</html>
