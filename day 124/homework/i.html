@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let fruits = {
+  Apple: "Red",
+  Banana: "Yellow",
+  Grapes: "Purple"
+};
+
+console.log("Fruits and their colors:");
+for (let fruit in fruits) {
+  console.log(`${fruit} -> ${fruits[fruit]}`);
+}
+
+
+
+fruits["Orange"] = "Orange";
+
+delete fruits["Banana"];
+
+console.log("\nUpdated fruits and their colors:");
+for (let fruit in fruits) {
+  console.log(`${fruit} -> ${fruits[fruit]}`);
+
+
+
+
+}
+
+
+let countries = new Map([
+  ["France", "Paris"],
+  ["Japan", "Tokyo"],
+  ["Brazil", "Brasília"],
+  ["Canada", "Ottawa"],
+  ["India", "New Delhi"]
+]);
+if (countries.has("France")) {
+  console.log("Yes");
+} else {
+  console.log("No");
+}
+
+console.log("\nCountries and their capitals:");
+for (let [country, capital] of countries) {
+  console.log(`The capital of ${country} is ${capital}`);
+}
+
+let countriesArray = Array.from(countries);
+console.log("\nMap as Array:");
+console.log(countriesArray);
+
+let countriesMapAgain = new Map(countriesArray);
+console.log("\nConverted back to Map:");
+for (let [country, capital] of countriesMapAgain) {
+  console.log(`${country} -> ${capital}`);
+}
+
+
+    </script>
+</body>
+</html>

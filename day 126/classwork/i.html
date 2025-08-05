@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Animal{
+            constructor(name){
+                this.name = name;
+            }
+
+            speak(){
+                console.log(`${this.name} makes a noise`);
+            }
+        }
+console.log(Animal)
+
+
+let animal1 = new Animal("Dog");
+console.log(animal1);
+animal1.speak();
+
+
+class Mathstuf{
+    constructor(name){
+        this.name = name;
+    }
+    static add(a, b){
+        return a + b;
+    }
+}
+console.log(Mathstuf.add(5, 10));
+
+let obj1 = new Mathstuf("Math");
+console.log(obj1);
+
+    </script>
+    
+</body>
+</html>

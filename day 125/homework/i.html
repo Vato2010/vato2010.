@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let set1 = new Set();
+
+set1.add("apple");
+set1.add("banana");
+set1.add("orange");
+
+console.log("\nHas apple?", set1.has("apple")); // true
+
+console.log("Size:", set1.size);
+
+set1.delete("banana");
+console.log("After deletion:", [...set1]);
+
+set1.clear();
+console.log("After clear:", [...set1]);
+
+let set2 = new Set(["cat", "dog", "parrot"]);
+console.log("\nSet2 forEach:");
+set2.forEach(value => console.log(value));
+
+let arrFromSet = [...set2];
+console.log("Array from Set:", arrFromSet);
+
+let a = new Set([1, 2, 3]);
+let b = new Set([3, 4, 5]);
+let union = new Set([...a, ...b]);
+console.log("Union:", [...union]);
+
+let intersection = new Set([...a].filter(x => b.has(x)));
+console.log("Intersection:", [...intersection]);
+
+
+
+let numbers = new Set([1, 2, 3, 4, 5]);
+
+let fruits = new Set(["apple", "banana"]);
+fruits.add("orange");
+console.log("\nFruits:", [...fruits]);
+
+fruits.add("apple");
+console.log("After adding duplicate:", [...fruits]);
+
+console.log("Has banana?", fruits.has("banana")); 
+
+fruits.delete("banana");
+console.log("After removing banana:", [...fruits]);
+let colors = new Set(["red", "green", "blue"]);
+console.log("Favorite colors:");
+for (let color of colors) {
+  console.log(color);
+}
+
+let names = new Set(["Anna", "Bob", "Cathy"]);
+let namesArray = [...names];
+console.log("Names as array:", namesArray);
+
+let dupArray = [1, 2, 2, 3, 3, 4];
+let uniqueArray = [...new Set(dupArray)];
+console.log("No duplicates:", uniqueArray);
+
+let letters = ['a', 'b', 'a', 'c', 'b'];
+let uniqueLetters = new Set(letters);
+console.log("Unique letters count:", uniqueLetters.size);
+
+let animals = new Set(["lion", "tiger"]);
+animals.clear();
+console.log("Cleared Set:", [...animals]);
+let pets = new Set();
+console.log("\nEmpty Set:", pets);
+
+pets.add("cat");
+pets.add("dog");
+pets.add("parrot");
+
+console.log("Has dog?", pets.has("dog"));
+
+pets.delete("parrot");
+
+console.log("Set size:", pets.size);
+
+let nums = new Set([1, 2, 3]);
+for (let n of nums) console.log(n);
+
+nums.clear();
+console.log("After clearing:", [...nums]);
+
+let array = [1, 2, 2, 3, 4, 4];
+let uniqueNums = new Set(array);
+console.log("From array:", [...uniqueNums]);
+
+let arrayAgain = [...uniqueNums];
+console.log("Back to array:", arrayAgain);
+
+function hasDuplicates(arr) {
+  return new Set(arr).size !== arr.length;
+}
+console.log("Has duplicates:", hasDuplicates([1, 2, 2, 3]));
+
+
+
+let sentence = "The sun shines and the moon glows";
+let words = new Set(sentence.toLowerCase().split(" "));
+console.log("\nUnique words:", [...words]);
+
+function intersectSets(setA, setB) {
+  return new Set([...setA].filter(x => setB.has(x)));
+}
+
+function differenceSets(setA, setB) {
+  return new Set([...setA].filter(x => !setB.has(x)));
+}
+
+function countUniqueChars(str) {
+  return new Set(str).size;
+}
+console.log("Unique chars in 'hello':", countUniqueChars("hello"));
+
+function sameUnique(arr1, arr2) {
+  let s1 = new Set(arr1);
+  let s2 = new Set(arr2);
+  if (s1.size !== s2.size) return false;
+  for (let val of s1) if (!s2.has(val)) return false;
+  return true;
+}
+console.log("Same unique:", sameUnique([1,2,2,3], [3,1,2]));
+
+// Remove duplicate subarrays
+let subarrays = [[1, 2], [2, 3], [1, 2]];
+let seen = new Set();
+let uniqueSubs = subarrays.filter(sub => {
+  let key = JSON.stringify(sub);
+  if (seen.has(key)) return false;
+  seen.add(key);
+  return true;
+});
+console.log("Unique subarrays:", uniqueSubs);
+
+let objects = [{id: 1}, {id: 2}, {id: 1}];
+let seenIds = new Set();
+let uniqueObjs = objects.filter(obj => {
+  if (seenIds.has(obj.id)) return false;
+  seenIds.add(obj.id);
+  return true;
+});
+console.log("Unique by id:", uniqueObjs);
+
+let visitors = ["alice", "bob", "alice", "dan"];
+let uniqueVisitors = new Set(visitors);
+console.log("Unique visitors count:", uniqueVisitors.size);
+
+let numsList = [10, 15, 30, 33, 45, 50, 60];
+let divisible = new Set(numsList.filter(n => n % 3 === 0 && n % 5 === 0));
+console.log("Divisible by 3 and 5:", [...divisible]);
+
+function allUnique(word) {
+  return new Set(word).size === word.length;
+}
+console.log("Is 'lamp' unique?", allUnique("lamp"));
+console.log("Is 'moon' unique?", allUnique("moon"));
+
+    </script>
+</body>
+</html>

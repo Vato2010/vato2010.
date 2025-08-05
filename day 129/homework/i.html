@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        // Task 1
+const addSymbol = '+';
+const subSymbol = '-';
+const multiplySymbol = '*';
+const plus = addSymbol;
+const minus = subSymbol;
+const times = multiplySymbol;
+console.log(plus);
+console.log(minus);
+console.log(times);
+
+// Task 2
+const defaultCharacter = "🧙 Wizard";
+const warrior = "🗡️ Warrior";
+const healer = "💊 Healer";
+const mainCharacter = defaultCharacter;
+const tank = warrior;
+const support = healer;
+console.log(`Party: ${mainCharacter} (Main), ${tank} (Tank), ${support} (Support)`);
+
+// Task 3
+const lion = "🦁";
+const elephant = "🐘";
+const parrot = "🦜";
+function visit() {
+  return "Welcome to the Zoo!";
+}
+const zoo = {
+  lion,
+  elephant,
+  parrot,
+  default: visit
+};
+const parrotAlone = parrot;
+console.log(zoo.default());
+console.log(zoo.lion);
+console.log(parrotAlone);
+
+    </script>
+
+    
+</body>
+</html>
