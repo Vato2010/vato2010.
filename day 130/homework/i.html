@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Task 1
+function square(num) { return num * num; }
+function double(num) { return num * 2; }
+function magicMath(num) { return square(num) + double(num); }
+console.log(magicMath(3));
+
+// Task 2
+function shout(str) { return str.toUpperCase(); }
+function whisper(str) { return str.toLowerCase(); }
+function flipCase(str) {
+  return str.split('').map(c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()).join('');
+}
+console.log(flipCase("HeLLo WoRLd"));
+
+// Task 3
+function getYear() { return new Date().getFullYear(); }
+function getMonth() { return new Date().getMonth() + 1; }
+function getDateString() {
+  const d = new Date();
+  return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+}
+console.log(getDateString());
+
+// Task 4
+function first(arr) { return arr[0]; }
+function last(arr) { return arr[arr.length-1]; }
+function wrapEnds(arr) {
+  if(arr.length===0) return [];
+  if(arr.length===1) return [arr[0]];
+  return [first(arr), last(arr)];
+}
+console.log(wrapEnds([10,20,30,40]));
+
+    </script>
+</body>
+</html>

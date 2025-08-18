@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // --------------------
+// სინქრონული პროგრამირება
+// --------------------
+// სინქრონულში კოდი სრულდება ზედიზედ, ხაზობრივად.
+// ყოველი შემდეგი ბრძანება იწყებს მუშაობას მხოლოდ მაშინ,
+// როცა წინა დასრულდება.
+
+console.log("სინქრონული მაგალითი 1");
+console.log("პირველი"); 
+console.log("მეორე"); 
+console.log("მესამე"); 
+
+console.log("სინქრონული მაგალითი 2");
+function add(a, b) {
+  return a + b;
+}
+const result = add(5, 10); // ფუნქცია სრულდება მაშინვე
+console.log("ჯამი:", result);
+
+console.log("სინქრონული მაგალითი 3");
+for (let i = 1; i <= 3; i++) {
+  console.log("რიცხვი:", i); // ყოველი იტერაცია სრულდება ზედიზედ
+}
+
+
+
+// --------------------
+// ასინქრონული პროგრამირება
+// --------------------
+// ასინქრონულში კოდის ნაწილი სრულდება ფონურად,
+// ხოლო დანარჩენი პროგრამა არ ჩერდება მის დასრულებამდე.
+// ეს საშუალებას გვაძლევს პარალელურად ვიმუშაოთ სხვა კოდზეც.
+
+console.log("ასინქრონული მაგალითი 1");
+setTimeout(() => {
+  console.log("ეს დაიბეჭდება 2 წამში");
+}, 2000);
+console.log("ეს კი დაიბეჭდება მაშინვე");
+
+console.log("ასინქრონული მაგალითი 2");
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(res => res.json())
+  .then(data => console.log("მიღებული მონაცემები:", data));
+console.log("მონაცემების მოთხოვნა გაიგზავნა, ვაგრძელებთ მუშაობას");
+
+console.log("ასინქრონული მაგალითი 3");
+async function getUser() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
+  const user = await res.json();
+  console.log("მომხმარებელი:", user);
+}
+getUser();
+console.log("ფუნქცია შესრულდება ფონურად და შედეგი გამოჩნდება მოგვიანებით");
+
+    </script>
+</body>
+</html>
